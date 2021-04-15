@@ -9,30 +9,160 @@
     overflow: hidden;
 }
 
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
 #toolbar{
     width: 100%;
-/*    height: 50px;*/
-    padding: 0px 10px;
+/*    padding: 0px 10px;*/
     position: fixed;
-    top: 0;
+    display: flex;
+    justify-content: space-between;
     background-color: dimgray;
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 #toolbar__left{
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 40px;
+    margin-left: 10px;
 }
 #toolbar__right{
     display: flex;
     align-items: center;
-/*    flex-direction: row-reverse;*/
-    gap: 10px;
+    flex-direction: row-reverse;
+    gap: 20px;
+    margin-right: 10px; 
 }
+
+.rangeDiv{
+    display: flex;
+    align-items: center;
+}
+
+.smallInput{
+    cursor: pointer;
+    width: 30px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.range{
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+#brushes{
+    display: flex;
+    align-items: center;
+/*    margin-left: 10px;*/
+}
+.brushType{
+    cursor: pointer;
+/*    width: 75px;*/
+    text-align: center;
+    border-radius: 0 10px;
+    padding: 6px;
+    margin-left: 5px;
+    background-color: #434343;
+}
+/*
+.brushType:hover{
+    background-color: #818181;
+}
+*/
+.brushType.act{
+    border-style: solid;
+    border-width: 2px;
+    padding: 4px; 
+    border-color: aqua aqua deepskyblue deepskyblue;
+/*    border-color: deepskyblue;*/
+}
+
+#text, #save{
+    cursor: pointer;
+    text-align: center;
+    margin-left: 5px;
+    padding: 6px;
+    border-radius: 5px;
+    background-color: #434343;
+}
+
+#text:hover, #save:hover, .brushType:hover{
+    background-color: #818181;
+}
+
+/*
+#save{
+    cursor: pointer;
+    width: 75px;
+    text-align: center;
+    padding: 6px;
+    background-color: #434343;
+    border-radius: 5px;
+}
+#save:hover{
+    background-color: #818181;
+}
+*/
+
+#chooseColor{
+    position: relative;
+    overflow: hidden;
+    width: 35px;
+    height: 35px;
+    padding: 0px;
+/*    border: dimgray;*/
+    border-radius: 50%;
+}
+#colorRange{
+    cursor: pointer;
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    width: 56px;
+    height: 56px;
+    border: none;
+    padding: 0;
+}
+
+#someText{
+    visibility: hidden;
+    cursor: pointer;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.0);
+}
+
+.newText{
+    position: absolute;
+    visibility: hidden;
+}
+
+#downloadframe{
+    display: none;
+}
+
+/*
+#drop-area{
+    display: flex;
+    align-items: center;
+}
+
+#fileElem {
+    display: none;
+}
+*/
+
+
+
+
 
 /*
 .radcontrol{
@@ -46,44 +176,16 @@
 }
 */
 
-#rad{
+/*#rad{*/
 /*
     display: flex;
     align-items: center;
 */
 /*    border-radius: 5px;*/
 /*    padding: 8px;*/
-}
+/*}*/
 
-#brushes{
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
-}
-.brushType{
-/*
-    width: 75px;
-    height: 30px;
-*/
-    background-color: darkgrey;
-/*    display: inline-block;*/
-    text-align: center;
-    border: solid;
-/*    border-radius: 1px;*/
-    border-color: darkgrey;
-    border-radius: 5px;
-    padding: 5px 10px;
-    margin-left: 5px;
-}
-.brushType:hover{
-    background-color: #818181;
-    border-color: #818181;
-}
-.brushType.act{
-    border: solid;
-    border-radius: 5px;
-    border-color: cornflowerblue;
-}
+
 
 /*
 .range{
@@ -101,9 +203,7 @@
     }
 */
 
-.range{
-    padding-left: 5px;  
-}
+
 
 
 
@@ -142,11 +242,7 @@
 */
 
 
-.rangeDiv{
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
-}
+
 
 /*
 #chooseColor{
@@ -174,101 +270,13 @@
     box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.5);
 }
 */
-#save{
-    margin-right: 10px;
-    height: 30px;
-    padding: 8px;
-    background-color: #434343;
-    border-radius: 5px;
-}
-#save:hover{
-    background-color: #818181;
-}
 
-#text{
-    height: 30px;
-    padding: 8px;
-    background-color: #434343;
-    border-radius: 5px;
-}
-#text:hover{
-    background-color: #818181;
-}
-
-#someText{
-    width: auto;
-/*    height: auto;*/
-/*    color: red;*/
-    position: absolute;
-/*    left: 100px;*/
-    top: 150px;   
-/*    padding: auto;*/
-/*    border: 5px;*/
-/*    border-style: dashed;*/
-/*    border-style: none;*/
-    background-color: rgba(255, 255, 255, 0.0);
-/*    transform: rotate(25deg);*/
-    padding: 0px;
-}
 /*
 #someText:hover{
     border-style: dashed;
     border-color: skyblue;
 }
 */
-
-.smallInput{
-/*    display: inline-block; */
-    width: 30px;
-    border-radius: 4px;
-    margin-left: 5px;
-/*    background-color: dimgray;*/
-}
-
-#drop-area{
-    display: flex;
-    align-items: center;
-}
-
-#fileElem {
-    display: none;
-}
-
-
-#chooseColor{
-    position: relative;
-    overflow: hidden;
-    width: 35px;
-    height: 35px;
-    padding: 0px;
-/*    background-color: rgba(255, 255, 255, 0.0);*/
-    border: dimgray;
-    border-radius: 40px;
-}
-#colorRange{
-    position: absolute;
-    right: -8px;
-    top: -8px;
-    width: 56px;
-    height: 56px;
-    border: none;
-    padding: 0px;
-    background-color: rgba(255, 255, 255, 0.0);
-/*    cursor: pointer;*/
-}
-
-.newText{
-    width: auto;
-    height: auto;
-    position: absolute;
-    visibility: hidden;
-/*
-    width: 0px;
-    height: 0px;
-*/
-    top: 0px;
-    left: 0px;
-}
 
 /*
 ::-webkit-scrollbar {
